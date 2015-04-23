@@ -3,5 +3,6 @@ class Scheduler(object):
 
     def __init__(self):
         print "test"
+        print "test"
 if __name__ == '__main__':
     Scheduler()
