@@ -6,3 +6,4 @@ class Scheduler(object):
         print "test"
 if __name__ == '__main__':
     Scheduler()
+https://github.com/pyKun/vimrc/blob/master/git_script.sh
