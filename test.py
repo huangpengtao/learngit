@@ -7,6 +7,7 @@ class Scheduler(object):
 if __name__ == '__main__':
     Scheduler()
 
+https://github.com/pyKun/vimrc/blob/master/git_script.sh
 git mv application.py newApplication.py
 git status
 
