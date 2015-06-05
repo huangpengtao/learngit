@@ -1,3 +1,9 @@
+http://download.opensuse.org/distribution/13.1/iso/
+https://zh.opensuse.org/index.php?title=SDB:Live_USB_U%E7%9B%98%E5%AE%89%E8%A3%85&variant=zh
+http://blog.sina.com.cn/s/blog_62d4d5900101abqd.html
+http://software.opensuse.org/132/zh_CN
+
+
 http://yongbingchen.github.io/blog/2015/03/27/config-gerrit-server-behind-apache-https-reverse-proxy/
 
 '$site_path'/etc/gerrit.config 
