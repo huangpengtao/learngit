@@ -8,3 +8,5 @@ http://longgeek.com/2013/12/26/ci-system-structures-iii-gerrit-installation-conf
 git config --global http.sslverify True
 git config --global  remote.gerrit.url https://huangpengtao:ba9kGdUqzKo+@review.openstack.org/openstack/nova.git
 
+https://www.irccloud.com/pastebin/pJ1buYbh/
+https://www.irccloud.com/pastebin/nyTwAoSl/
