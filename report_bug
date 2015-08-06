@@ -1,0 +1,7 @@
+def _commit_port_binding
+            oport = self._make_port_dict(port_db)
+            port = self._make_port_dict(port_db)
+			
+def _commit_port_binding						
+        if commit:(多余)
+            self.mechanism_manager.update_port_postcommit(cur_context)			
