@@ -1,7 +1,5 @@
-def _commit_port_binding
-            oport = self._make_port_dict(port_db)
-            port = self._make_port_dict(port_db)
-			
-def _commit_port_binding						
-        if commit:(多余)
-            self.mechanism_manager.update_port_postcommit(cur_context)			
+Driver.py (virt\libvirt)
+def reboot
+else
+格式  return self._hard_reboot(context, instance, network_info,
+                                 block_device_info)		
