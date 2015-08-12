@@ -1,14 +1,13 @@
-Driver.py (virt\libvirt)
-def reboot
-else
-格式  return self._hard_reboot(context, instance, network_info,
-                                 block_device_info)		
-neutron/plugins/ml2/plugin.py
-if commit:
-            self.mechanism_manager.update_port_postcommit(cur_context)
-			
-neutron/plugins/ml2/plugin.py
-new empty line between			
+1 def _validate_port_range
+if rule[attr] > 255 or rule[attr] < 0:
+
+2 def _plug
+        if not gw_ip:         
+        if gw_ip:
+Synchronous_namespace_driver.py (\neutron_lbaas\drivers\haproxy)
+		
+3 neutron/common/Config.py
+cfg.StrOpt('core_plugin',	"neutron.plugins.ml2.plugin.Ml2Plugin"			
 			
 http://yeasy.gitbooks.io/openstack_code_neutron/content/neutron/agent/dhcp_agentpy.html			
 			
