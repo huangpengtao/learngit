@@ -2,13 +2,14 @@
         if not gw_ip:         
         if gw_ip:
 
+ modify message
+
 3 neutron/common/Config.py
 cfg.StrOpt('core_plugin',	"neutron.plugins.ml2.plugin.Ml2Plugin"
 
-1. Should be "else:"
-2. delete sgids branch
-3. def get_dhcp_agents_hosting_networks
-Closes-Bug: #1312016
-spark		
+1 get_dvr_mac_address_with_retry
+   delete return
+
+
 			
 	
