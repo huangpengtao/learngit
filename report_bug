@@ -1,14 +1,11 @@
-2 def _plug  Synchronous_namespace_driver.py (\neutron_lbaas\drivers\haproxy)
-        if not gw_ip:         
-        if gw_ip:
-
- modify message
-
 3 neutron/common/Config.py
 cfg.StrOpt('core_plugin',	"neutron.plugins.ml2.plugin.Ml2Plugin"
 
-1 get_dvr_mac_address_with_retry
-   delete return
+http://stackalytics.com/?release=all&user_id=huangpengtao
+https://launchpad.net/~huangpengtao
+
+1 delete local 4 constant value
+2 get_dhcp_agents_hosting_networks
 
 
 			
