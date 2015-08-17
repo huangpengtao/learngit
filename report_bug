@@ -7,6 +7,12 @@ https://launchpad.net/~huangpengtao
 1 delete local 4 constant value
 2 get_dhcp_agents_hosting_networks
 
+3 change if to else
+
+the if gw_ip condition is also the else condition
+in front. so change if to else to make the code
+better.Both namespace_driver.py and
+synchronous_namespace_driver.py have the problem.
 
 			
 	
