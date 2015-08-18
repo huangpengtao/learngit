@@ -14,5 +14,28 @@ in front. so change if to else to make the code
 better.Both namespace_driver.py and
 synchronous_namespace_driver.py have the problem.
 
+1 delete local 4 constant value
+2 get_dhcp_agents_hosting_networks
+3 etc/neutron_vpnaas.conf  # service_provider
+no service_provider is provided.
+it provided in "Commits on Feb 19, 2015"
+
+4
+merge
+change the variable "vol" to "bdm"
+
+change the variable "vol" to "bdm" will make code
+easier to be understand for the variable reference
+using is "bdm"
+
+5
+change if to else in in haproxy namespace drivers
+
+The if gw_ip condition is also the else condition
+in front. so change if to else to make the code
+better. Both namespace_driver.py and 
+synchronous_namespace_driver.py have the problem.
+
+
 			
 	
