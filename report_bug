@@ -1,41 +1,12 @@
-3 neutron/common/Config.py
-cfg.StrOpt('core_plugin',	"neutron.plugins.ml2.plugin.Ml2Plugin"
 
-http://stackalytics.com/?release=all&user_id=huangpengtao
-https://launchpad.net/~huangpengtao
+/1//COMMIT_MSG
+1 core_plugin p8
+2 delete change if to else branch
+3 
+Check ICMP codes in range [0,255]
 
-1 delete local 4 constant value
-2 get_dhcp_agents_hosting_networks
+ICMP allows codes between 0 and 255, this change
+adds a check for codes range min value.
+port-range-min is also need to be checked.
 
-3 change if to else
-
-the if gw_ip condition is also the else condition
-in front. so change if to else to make the code
-better.Both namespace_driver.py and
-synchronous_namespace_driver.py have the problem.
-
-1 delete local 4 constant value
-2 get_dhcp_agents_hosting_networks
-3 etc/neutron_vpnaas.conf  # service_provider
-no service_provider is provided.
-it provided in "Commits on Feb 19, 2015"
-
-4
-merge
-change the variable "vol" to "bdm"
-
-change the variable "vol" to "bdm" will make code
-easier to be understand for the variable reference
-using is "bdm"
-
-5
-change if to else in in haproxy namespace drivers
-
-The if gw_ip condition is also the else condition
-in front. so change if to else to make the code
-better. Both namespace_driver.py and 
-synchronous_namespace_driver.py have the problem.
-
-
-			
-	
+Fixes bug 1486300
