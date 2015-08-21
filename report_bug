@@ -1,12 +1,11 @@
+2 get_dhcp_agents_hosting_networks
 
-/1//COMMIT_MSG
-1 core_plugin p8
-2 delete change if to else branch
-3 
-Check ICMP codes in range [0,255]
-
-ICMP allows codes between 0 and 255, this change
-adds a check for codes range min value.
-port-range-min is also need to be checked.
-
-Fixes bug 1486300
+1
+if plugin_inst == self.service_plugins[
+                                  plugin_inst.get_plugin_type()]:
+                    pass
+                else:
+                    raise
+test_multiple_plugins_specified_for_service_type 
+test_multiple_plugins_by_name_specified_for_service_type
+assertNotIn
