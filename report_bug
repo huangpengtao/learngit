@@ -1,11 +1,15 @@
-2 get_dhcp_agents_hosting_networks
+1 _validate_port_range
 
-1
-if plugin_inst == self.service_plugins[
-                                  plugin_inst.get_plugin_type()]:
-                    pass
-                else:
-                    raise
-test_multiple_plugins_specified_for_service_type 
-test_multiple_plugins_by_name_specified_for_service_type
-assertNotIn
+2 convert_validate_port_value
+        if ip_proto in [constants.PROTO_NUM_TCP, constants.PROTO_NUM_UDP]:
+            if (rule['port_range_min'] is not None and
+                rule['port_range_max'] is not None and
+                rule['port_range_min'] >= 1 and
+                rule['port_range_max'] <= 65535 and
+
+3  service_plugins
+_create_security_group_rule
+
+4  
+ File "neutron/tests/functional/services/l3_router/test_l3_dvr_router_plugin.py", line 50, in test_get_device_owner_distributed_router_id
+2015-08-23 03:47:54.765 | 2015-08-23 03:47:54.758 |         l3_dvr_db.DEVICE_OWNER_DVR_INTERFACE,
