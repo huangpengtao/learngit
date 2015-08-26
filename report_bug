@@ -1,15 +1,19 @@
 1 _validate_port_range
 
-2 convert_validate_port_value
         if ip_proto in [constants.PROTO_NUM_TCP, constants.PROTO_NUM_UDP]:
             if (rule['port_range_min'] is not None and
                 rule['port_range_max'] is not None and
                 rule['port_range_min'] >= 1 and
                 rule['port_range_max'] <= 65535 and
-
+2 convert_validate_port_value add common
+ #for vlan range[1,4094],
 3  service_plugins
-_create_security_group_rule
+assertNotIn is not appropriate
 
-4  
- File "neutron/tests/functional/services/l3_router/test_l3_dvr_router_plugin.py", line 50, in test_get_device_owner_distributed_router_id
-2015-08-23 03:47:54.765 | 2015-08-23 03:47:54.758 |         l3_dvr_db.DEVICE_OWNER_DVR_INTERFACE,
+4 fakev4s FakeV4Subnet" class be inherited by following class
+5 l3_db.py  delete DEVICE_OWNER_ROUTER_INTF
+
+6 service_plugins
+7 Db_base_plugin_v2.py (db)
+def create_port  p/port_info
+p is so simple, that can use pdb to print p value for p in pdb is print
