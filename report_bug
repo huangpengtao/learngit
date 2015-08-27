@@ -1,19 +1,22 @@
-1 _validate_port_range
+1 get_dhcp_agents_hosting_networks
+ if network_ids
 
-        if ip_proto in [constants.PROTO_NUM_TCP, constants.PROTO_NUM_UDP]:
-            if (rule['port_range_min'] is not None and
-                rule['port_range_max'] is not None and
-                rule['port_range_min'] >= 1 and
-                rule['port_range_max'] <= 65535 and
-2 convert_validate_port_value add common
- #for vlan range[1,4094],
-3  service_plugins
-assertNotIn is not appropriate
+ query.filter(NetworkDhcpAgentBinding.network_id == network_ids[0])
+ and query.filter(NetworkDhcpAgentBinding.network_id in network_ids)
+ are equivalent when len(network_ids) ==1, this change uses such 
+ property to simplify get_dhcp_agents_hosting_networks implementation.
+ 
+ 
+2 Replace "p" variable by "port_info"
+	local value p is meaningless, and can't be print
+	
+3 
+using deepcopy rather than calling the funtion twice
 
-4 fakev4s FakeV4Subnet" class be inherited by following class
-5 l3_db.py  delete DEVICE_OWNER_ROUTER_INTF
+the deepcopy is faster than to generate a variable using function
+and make the code more readable
 
-6 service_plugins
-7 Db_base_plugin_v2.py (db)
-def create_port  p/port_info
-p is so simple, that can use pdb to print p value for p in pdb is print
+4
+Ignore repeated values in service plugins
+
+5 delete DEFAULT_INTERFACE_MAPPINGS = []
