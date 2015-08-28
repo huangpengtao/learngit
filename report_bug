@@ -1,22 +1,25 @@
-1 get_dhcp_agents_hosting_networks
- if network_ids
+1
+add       plugin_providers = set(plugin_providers) 
+plugin_type = plugin_inst.get_plugin_type()
 
- query.filter(NetworkDhcpAgentBinding.network_id == network_ids[0])
- and query.filter(NetworkDhcpAgentBinding.network_id in network_ids)
- are equivalent when len(network_ids) ==1, this change uses such 
- property to simplify get_dhcp_agents_hosting_networks implementation.
- 
- 
-2 Replace "p" variable by "port_info"
-	local value p is meaningless, and can't be print
-	
-3 
-using deepcopy rather than calling the funtion twice
 
-the deepcopy is faster than to generate a variable using function
-and make the code more readable
 
-4
-Ignore repeated values in service plugins
+2 find ./ -print | xargs grep -isnH " p = port"
+./neutron/db/securitygroups_db.py:689:        p = port['port']
+./neutron/db/l3_db.py:565:            p = port['port']
+./neutron/db/ipam_non_pluggable_backend.py:345:        p = port['port']
+./neutron/db/db_base_plugin_v2.py:1117:        p = port['port']
+./neutron/db/ipam_pluggable_backend.py:181:        p = port['port']
+./neutron/tests/unit/extensions/test_portsecurity.py:90:        p = port['port']
+./neutron/tests/unit/db/test_allowedaddresspairs_db.py:55:        p = port['port']
+ def delete_csnat_router_interface_ports
 
-5 delete DEFAULT_INTERFACE_MAPPINGS = []
+ 3
+ dvr_deletens_if_no_port
+             for prt in int_ports:
+			 
+4	 test_multiple_plugins_mixed_specified_for_service_type
+manager.NeutronManager.get_instance()
+
+5
+query.filter(NetworkDhcpAgentBinding.network_id == network_ids[0]) and query.filter(NetworkDhcpAgentBinding.network_id in network_ids) are equivalent when len(network_ids) ==1, this change uses such property to simplify get_dhcp_agents_hosting_networks implementation.
