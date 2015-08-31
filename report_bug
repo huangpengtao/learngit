@@ -1,25 +1,8 @@
-1
-add       plugin_providers = set(plugin_providers) 
-plugin_type = plugin_inst.get_plugin_type()
+1_get_routers_to_schedule
 
+2
+test_router_update_gateway_with_invalid_external_subnet
 
+3 sync_routers delete useless brackets
 
-2 find ./ -print | xargs grep -isnH " p = port"
-./neutron/db/securitygroups_db.py:689:        p = port['port']
-./neutron/db/l3_db.py:565:            p = port['port']
-./neutron/db/ipam_non_pluggable_backend.py:345:        p = port['port']
-./neutron/db/db_base_plugin_v2.py:1117:        p = port['port']
-./neutron/db/ipam_pluggable_backend.py:181:        p = port['port']
-./neutron/tests/unit/extensions/test_portsecurity.py:90:        p = port['port']
-./neutron/tests/unit/db/test_allowedaddresspairs_db.py:55:        p = port['port']
- def delete_csnat_router_interface_ports
-
- 3
- dvr_deletens_if_no_port
-             for prt in int_ports:
-			 
-4	 test_multiple_plugins_mixed_specified_for_service_type
-manager.NeutronManager.get_instance()
-
-5
-query.filter(NetworkDhcpAgentBinding.network_id == network_ids[0]) and query.filter(NetworkDhcpAgentBinding.network_id in network_ids) are equivalent when len(network_ids) ==1, this change uses such property to simplify get_dhcp_agents_hosting_networks implementation.
+4 port_info -> port_data
