@@ -1,8 +1,7 @@
-1_get_routers_to_schedule
+1 validate_firewall_routers_not_in_use
+2 _get_agent_fdb 
 
-2
-test_router_update_gateway_with_invalid_external_subnet
-
-3 sync_routers delete useless brackets
-
-4 port_info -> port_data
+3 update_port_postcommit ()
+4 generate_dvr_port_status 
+5 l2_population  delete one
+Neutron l2pop
