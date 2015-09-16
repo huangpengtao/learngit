@@ -1,27 +1,4 @@
-	def update_migrated_ports_details(self, session, port, migrated_ports):
-	    """Store the old port information in the table
-	    ml2_port_bindings.profile.
-	    """
- 	    with session.begin(subtransactions=True):	    
-        self.delete_port_binding(session, port_id)
-            
-	        context._binding.profile=jsonutils.dumps(migrated_ports)
-	        session.add(record)
-	        return record
-	def delete_port_details(self, session, port_id):
-	    """Release a dynamic segment for the params provided if one exists."""
-	    if port_id:
-	        (session.query(models.PortBinding).
-	         filter_by(port_id=port_id).delete())
-	def get_ports_details(self, session, port_id):
-        with session.begin(subtransactions=True):
-			query = (session.query(models.PortBinding).
-			                   filter_by(port_id=port_id))            
-            if query:
-               return query.first()
-    def get_migrated_ports_details(self, session, port_id):
-        ports = self.get_ports_details(session, port_id)
-        if ports:
-            ports_details = jsonutils.loads(ports.profile)
-            if ports_details.has_key(port_id):
-               return ports_details.get(port_id)
+1 _bind_port_level
+        if level >= MAX_BINDING_LEVELS:
+nova
+3 try_deallocate_networks  _shutdown_instance
