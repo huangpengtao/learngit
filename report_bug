@@ -2,3 +2,18 @@
         if level >= MAX_BINDING_LEVELS:
 nova
 3 try_deallocate_networks  _shutdown_instance
+1 _bind_port_level
+        if level >= MAX_BINDING_LEVELS:
+nova
+3 _try_deallocate_network多余  _shutdown_instance
+4  _portsec_ext_port_create_processing
+_process_routers_loop
+
+        while True:
+5 configure_dhcp_for_network  self.enable_isolated_metadata_proxy
+  
+6 sync_state   pool.spawn(self.safe_configure_dhcp_for_network, network)
+
+http://alembic.readthedocs.org/en/latest/tutorial.html
+
+7 _process_router_update
