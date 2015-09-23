@@ -1,0 +1,762 @@
+1 _bind_port_level
+        if level >= MAX_BINDING_LEVELS:
+nova
+3 _try_deallocate_network多余  _shutdown_instance
+4  _portsec_ext_port_create_processing
+_process_routers_loop
+
+        while True:
+5 configure_dhcp_for_network  self.enable_isolated_metadata_proxy
+  
+6 sync_state   pool.spawn(self.safe_configure_dhcp_for_network, network)
+
+http://alembic.readthedocs.org/en/latest/tutorial.html
+
+7 _process_router_update
+  
+Test Access Point (TAP) device
+GRE 实质上作为点对点遂道扩展性太差, 不支持组播
+GRE 的本质是将 L3 层的数据包头重新定义后再通过 L4 层的 UDP 进行传输，
+VXLAN 的本质就是对 L2 层的数据帧头重新定义再通过 L4 层的 UDP 进行传输
+FwaaS 和 Security Group 的原理差不多，只不过代码重构将以前 Security Group 的代码挪到了现有的 L4/L7 层框架
+五个钩子函数（hook functions）,也叫五个规则链。
+                1.PREROUTING (路由前)
+                2.INPUT (数据包流入口)
+                3.FORWARD (转发管卡)
+                4.OUTPUT(数据包出口)
+                5.POSTROUTING（路由后）
+DNAT目标地址转换				
+外网ip来访问我们服务器不同的服务器				
+VTEP （VxLAN Tunnel End Point）：对虚机的二层包封装和解封
+	
+SNAT to provide outbound external connectivity for instances		
+bridge br-int replaces the packet source MAC address D1 with TG1.
+
+metadata服务向nova-conductor查询后，返回给network node上的metadata agent，再由metadata agent返回给metadata proxy，最后返回给虚拟机的
+
+NAT有三种类型：静态NAT(Static NAT)、动态地址NAT(Pooled NAT)、网络地址端口转换NAPT（Port－Level NAT）。
+
+Neutron L3 Agent 负责路由（routing）、浮动 IP 分配（floatingip allocation）， 地址转换（SNAT/DNAT）和 Security Group 管理
+
+        import pdb; pdb.set_trace()
+		 
+insert into MyClass values(1,'Tom',96.45),(2,'Joan',82.99), (2,'Wang', 96.59);
+delete FROM `neutron`.`ml2_port_bindings` where port_id='11e80c8b-9fe5-4762-a040-cb64a114a551';
+
+SELECT  * FROM `neutron`.`ml2_port_bindings`;
+
+conntrackd - netfilter connection tracking userspace daemon
+Conntrackd提供了一个用户控件守护进程用来 追踪iptables连接状态信息。
+在主备模式的防火墙下，当一个连接在主防火墙建立时，连接的信息会通过conntrackd同步到备份防火墙上。这样备份防火墙始终保存目前已经建立的连接信息，一旦主防火墙失效时，备份防火墙可以立即投入使用，而不用让已经建立的连接重新建立。
+
+Keepalived是基于VRRP协议实现的一款失效转发机制的软件
+要实现防火墙的主备切换，主备服务器都需要通过keepalived绑定相同的虚拟IP，内部的主机通过这个虚拟的IP与外界进行交互。
+
+Keepalived的作用是检测web服务器的状态，如果有一台web服务器死机，或工作出现故障，Keepalived将检测到，并将有故障的web服务器从系统中剔除，当web服务器工作正常后Keepalived自动将web服务器加入到服务器群
+
+ctrl-a d：退出 Screen 会话
+ctrl-a n：切换到下一个 Shell
+ctrl-a p：切换到上一个 Shell
+http://docs.openstack.org/networking-guide/scenario_dvr_ovs.html
+wget http://code.huawei.com/cang.chen/enjoy_huawei_mirror/raw/master/easy_devstack.sh -O ./easy_devstack.sh && bash easy_devstack.sh stable/kilo
+
+：% s / old / new / g
+http://stackalytics.com/?release=all&user_id=huangpengtao
+
+https://launchpad.net/~huangpengtao
+
+https://review.openstack.org/#/q/owner:%22huangpengtao%22,n,z
+
+http://stackalytics.com/?release=all&user_id=academicgareth
+
+http://stackalytics.com/?release=all&user_id=huangpengtao
+
+http://stackalytics.com/?user_id=&project_type=openstack&release=all&metric=marks&company=Huawei
+
+http://10.137.63.171:8080
+
+https://review.openstack.org/#/admin/groups/38,members
+
+admin/Huawei123
+Fixes bug 1486300
+由三层 进行分片
+网络节点应该会有如下进程在运行。
+python /usr/local/bin/neutron-dhcp-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/dhcp_agent.ini
+python /usr/local/bin/neutron-metadata-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/metadata_agent.ini
+python /usr/local/bin/neutron-l3-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/l3_agent.ini
+
+python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini
+
+nova network-list
+ip netns | grep 
+ip netns exec qdhcp-88513920-091b-4bee-a47c-5636593c69f5 ip a
+ip netns exec qdhcp-88513920-091b-4bee-a47c-5636593c69f5 tcpdump -i tap315b3aa8-c3 -nnvvvNXs 512
+
+dhcp-agent
+http://www.cnblogs.com/feisky/p/3848889.html
+http://www.cnblogs.com/sammyliu/p/4419195.html
+/opt/stack/data/neutron/dhcp
+
+Openstack并行性能加速
+http://www.choudan.net/2013/12/24/OpenStack%E5%B9%B6%E8%A1%8C%E6%80%A7%E8%83%BD%E5%8A%A0%E9%80%9F(%E7%BF%BB%E8%AF%91).html
+
+neutron core
+https://review.openstack.org/#/admin/groups/38,members
+
+每个neturon server中可以加载多个service plugiin,但只能加载一个core plugin。
+
+Python中，for－else用于处理遍历失败	
+								 
+python /usr/local/bin/neutron-openvswitch-agent --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini
+python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini
+
+nova boot --flavor 1 --image 1032f24a-3dd2-4fbe-a4df-e016c795bedb --nic net-id=ef99e9d5-252b-41c0-bef9-a47600a0834f,v4-fixed-ip=10.1.6.230 vm2
+								 
+ip6tables -nvL
+Provider network：管理员创建的直接和物理网络映射的网络。
+Tenant network：租户普通用户创建的网络，其配置由 Neutorn 根据管理员在系统中的配置决定。
+Provider Network 是由 OpenStack 管理员创建的，直接对应于数据中心的已有物理网络的一个网段。
+这种网络是可以在多个租户之间共享的
+这种网络通过计算和网络节点上指定的 bridge 直接接入物理网络
+也不需要接入 Neutron Virtual Router，也不需要使用 L3 agent。使用这种网络，必须预先在各计算和网络节点上配置指定的网桥。
+
+
+对 Flat 和 VLAN 类型的网络来说，只有 Provider network 才有意义。
+对 GRE 和 VXLAN 类型的网络来说，只有 tenant network 才有意义
+Provider network 根据 admin 用户输入的物理网络参数创建；而 tenant work 由 tenant 普通用户创建
+								 
+apt-get install exuberant-ctags
+http://vim.sourceforge.net/scripts/script.php?script_id=273
+下载taglist_46.zip
+unzip ../taglist_46.zip 
+cp doc/taglist.txt /usr/share/vim/vim74/doc/
+cp plugin/taglist.vim /usr/share/vim/vim74/plugin/
+
+ctags -R *
+
+https://webchat.freenode.net/#								 
+1.  $ ctags –R *      ($ 为Linux系统Shell提示符)
+        2.  $ vi –t tag         (请把tag替换为您欲查找的变量或函数名)
+        3． ：ts                                (ts 助记字：tags list, “:”开头的命令为VI中命令行模式命令)
+        4． ：tp                                (tp 助记字：tags preview)
+        5． ：tn                                (tn 助记字：tags next) 
+        6． Ctrl + ]
+        7． Ctrl + T
+:TlistOpen” 打开taglist窗口，用“:TlistClose”关闭taglist窗口
+ ctrl+w+w在正常编辑区域和tags区域中切换 
+     
+
+Method	              Checks that	New in
+assertEqual(a, b)	  a == b	 
+assertNotEqual(a, b)  a != b	 
+assertTrue(x)	      bool(x) is True	 
+assertFalse(x)	      bool(x) is False	 
+assertIs(a, b)	      a is b	2.7
+assertIsNot(a, b)     a is not b	2.7
+assertIsNone(x)	      x is None	2.7
+assertIsNotNone(x)	  x is not None	2.7
+assertIn(a, b)        a in b	2.7
+assertNotIn(a, b)	  a not in b	2.7
+assertIsInstance(a, b)	isinstance(a, b)	2.7
+assertNotIsInstance(a, b)  not isinstance(a, b)	2.7
+assertGreater(a, b)		   a > b	2.7
+assertGreaterEqual(a, b)   a >= b	2.7
+assertLess(a, b)		   a < b	2.7
+assertLessEqual(a, b)	   a <= b	2.7
+assertRegexpMatches(s, r)	r.search(s)	2.7
+assertNotRegexpMatches(s, r)	not r.search(s)	2.7
+assertItemsEqual(a, b)		    sorted(a) == sorted(b) and works with unhashable objs	2.7
+assertDictContainsSubset(a, b)	all the key/value pairs in a exist in b	2.7			
+						
+打断点，
+
+
+单步运行,区别s会进入路径中的函数，n不会进入 
+(Pdb)s 单步运行会进入路径中的函数
+(Pdb)n  单步运行不会进入函数
+(Pdb) c
+(Pdb) bt  查看调用堆栈
+(Pdb)b(reak)， 设置断点，b 77
+(Pdb) condition 4 a==3
+(Pdb)r  执行到函数返回
+(Pdb)p param #查看当前 变量值
+(Pdb)l #查看运行到某处代码
+(Pdb)a #查看全部栈内变量
+(Pdb)cl 清除指定的断点。如果没有带参数,则清除所有断点。
+(Pdb)disable 取消所有断点的功能,但仍然保留这些断点。
+(Pdb)enable 恢复断点的功能。
+(Pdb)d 在call stack中往下移一层
+(Pdb)u 在call stack中往上移一层
+(Pdb)condition bpnumber [condition]
+(Pdb)cl 清除指定的断点。如果没有带参数,则清除所有断点。
+(Pdb)q(uit)，退出调试
+(Pdb)a(rgs)，打印当前函数的参数
+
+后备镜像和差量镜像分散到不同的物理硬盘上，并保证镜像的安全性
+使用差量方式的好处：
+1) 快速生成虚拟机镜像，通过一条命令，瞬间生成虚拟机镜像。
+2) 节省磁盘空间，多台虚拟机公用一个后备镜像，节省大量空间。
+使用差量方式的风险
+1) 多台虚拟机启动的时候，io压力非常大，尤其是第一次启动的时候。
+2) 对后备镜像安全性要求非常高
+差量镜像转化成普通镜像，
+使用qemu-img convert
+
+test_update_port_fixed_ip_changed
+
+tox.ini file of your project add the following:
+[testenv:debug]
+commands = oslo_debug_helper -t keystoneclient/tests {posargs}
+import pdb; pdb.set_trace()
+        import pdb; pdb.set_trace()
+$ tox -e debug
+
+git是一种版本控制系统
+github是一个网站，给用户提供git服务
+GitHub 提供备份服务，repo的接口向导
+便于协作工作，便于跟踪问题
+
+
+br-int 是本地交换网桥；br-tun 是跟其它计算节点通信的承载网桥；br-phy 是跟外部公共网络通信的网桥
+
+./run_tests.sh horizon.test.tests.workflows:WorkflowsTests
+
+解决问题：
+加入存在的VM
+虚拟机手工关闭后，重启无法与openstack保持一直
+虚拟机建立ip序列丢失，无法使用定位
+系统异常崩溃修复
+
+
+提交代码评审
+git commit or git commit --amend
+git reset HEAD~1                      撤销最后一次提交。
+git reset --hard HEAD^             撤销最后一次提交并清除本地修改
+
+git review -d +你这个patch的网址的那个号
+git commit -a --amend
+git checkout -b all_mappings
+http://blog.csdn.net/lynn_kong/article/details/9405567
+冲突解决：
+git pull在master上
+在分支上
+git rebase master
+
+git shortlog -s -n
+
+sudo /usr/sbin/service openvswitch-switch status
+sudo /usr/sbin/service openvswitch-switch restart
+sudo /usr/sbin/service libvirt-bin start
+sudo /usr/sbin/service rabbitmq-server restart
+sudo /usr/sbin/service mysql restart
+sudo /usr/sbin/service apache2 start
+
+https://bugs.launchpad.net/openstack-manuals/+bug/1478181
+
+http://stackalytics.com/?release=all&user_id=huangpengtao
+
+https://launchpad.net/~huangpengtao
+
+http://stackalytics.com/?release=all&user_id=academicgareth
+
+http://stackalytics.com/?release=all&user_id=huangpengtao
+
+http://stackalytics.com/?user_id=&project_type=openstack&release=all&metric=marks&company=Huawei
+
+metadata的一个重要应用，是设置每个instance的ssh公钥
+1、创建instance时注入文件镜像
+2、启动instance后，通过metadata获取，然后用脚本写入
+提供一个机制给用户，可以设定参数
+虚拟机启动时会发起请求，metadata服务向nova-conductor查询后，返回metadata agent，再由metadata agent返回给metadata proxy，然后返回给虚拟机的
+neutron的metadata-agent并不会自己实现metadata服务，而是把cloud-init的请求转发给nova-api中的metadata服务
+
+Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。
+Logs from Jenkins test runs are sent to logstash where they are indexed and stored.
+Logstash:对日志进行收集、分析，并将其存储供以后使用
+kibana :收集、分析和搜索重要数据日志并提供友好的web界面,可以为 Logstash 和 ElasticSearch 提供的日志分析的 Web 界面。
+
+ELKstack 是 Elasticsearch、Logstash、Kibana 三个开源软件的组合
+Elasticsearch是一个基于Apache Lucene(TM)的开源搜索引擎。无论在开源还是专有领域，Lucene可以被认为是迄今为止最先进、性能最好的、功能最全的搜索引擎库。
+
+boot虚机时，nova-compute发消息给neutron-server请求创建port。在driver里面在br-int上建立port后，neutron-openvswitch-port循环检测br-int会发现新增端口,对其设定合适的openflow规则以及localvlan，最后将port状态设置为ACTIVE。
+
+Zuul is a program that is used to gate the source code repository of a project so that changes are only merged if they pass tests.
+
+VETH 设备是一种成对出现的点对点网络设备，从一段输入的数据会从另一端改变方向输出，通常用于改变数据方向，或连接其它网络设备。
+br-int是由OpenvSwitch虚拟化出来的网桥，充当了一个虚拟交换机的功能
+在Neutron中创建一个虚拟网络时，Neutron都会创建一个Network NameSpace
+
+openstack网络模式
+http://network.51cto.com/art/201401/426593.htm
+
+neutron --debug agent-list
+
+Logstash是内置有分析工具的日志服务，它可以整合来自许多服务器的日志，甚至让这些数据易于搜索。
+Jenkins是一个用Java编写的开源的持续集成工具
+Jenkins是基于Java开发的一种持续集成工具，用于监控持续重复的工作，功能包括：
+1、持续的软件版本发布/测试项目。
+2、监控外部调用执行的工作。
+
+持续集成正是针对这一类问题的一种软件开发实践。
+团队开发成员必须经常集成他们的工作，甚至每天都可能发生多次集成。而每次的集成都是通过自动化的构建来验证，包括自动编译、发布和测试，从而尽快地发现集成错误，让团队能够更快的开发内聚的软件。
+
+
+elastic-recheck:
+Search ElasticSearch for all occurrences of a bug.
+Identify bug trends such as: when it started, is the bug fixed, is it getting worse, etc.
+Classify bug failures in real time and report back to gerrit if we find a match, so a patch author knows why the test failed.
+
+
+elastic-recheck project uses Elasticsearch to classify and track OpenStack gate failures
+When a tracked bug is marked as fixed and it's dropped off the http://status.openstack.org/elastic-recheck/ page , push a change to archive the query for that bug.
+doc when to mark a bug as critical so that it shows up in the weekly release status meetings for the PTLs
+
+All queries are stored in separate yaml files in a queries directory at the top of the elastic-recheck code base. 
+
+N台机器的M个目录查看“ERROR”关键字，查看哪一个组件因为什么原因出错了，费时费力。因此首先需要对日志进行统一的归档和检索。
+
+
+Jenkins is a Continuous Integration system that runs tests and automates some parts of project operations.It is controlled for the most part by Zuul 
+
+
+devstack-gate	用于自动化测试提交的openstack patch，存档测试的openstack log
+elastic-recheck	提供实时的检测openstack产生的bug功能，检测产生bug，鉴别bug发生的时间，严重程度等，报告bug的级别
+jenkins-job-builder	提供jenkins任务的介绍，配置jenkins，提供template，使创建Jenkins任务更方便
+nodepool	提供部署、管理devstack的镜像池，如删除、更新镜像，维护镜像的一致性
+project-config	提供openstack的社区环境的配置文件仓库，如gerrit，zuul等的配置文件
+system-config	提供安装、维护openstack的社区项目环境功能，如Scope,Contributing,Bugs,Priority Efforts,Teams
+zuul	监视Gerrit事件，把更改的代码合并到pipeline，然后运行相关测试任务
+
+持续集成系统:
+自动编译、分发、部署和测试
+版本控制软件来保障代码的可维护性
+一个持续集成服务器
+
+Jenkins
+配置job产生趋势报告和自动化测试
+不同的branch建立不同的job，build来尽早地发现错误
+为不同的项目的开发人员建立email aliais
+
+5月份
+分析并总结openstack的社区新功能
+Gerrit安装
+使用devstack安装openstack
+
+6月份
+内源代码和社区代码比较分析
+内源代码keystone分析总结
+调研openstack infra各个项目的功能并总结
+社区code review，
+
+7月份
+调研Elastic Recheck功能，通过安装环境了解其功能
+学习并总结neutron社区功能，
+向社区提交bug和patch
+
+
+
+5月份
+
+
+
+Future Work
+Move config files into a separate directory
+Make unit tests robust
+Add debug mode flag
+Expand gating testing
+Cleanup and document code better
+Add ability to check if any resolved bugs return
+Move away from polling ElasticSearch to discover if its ready or not
+Add nightly job to propose a patch to remove bug queries that return no hits – Bug hasn’t been seen in 2 weeks and must be closed
+
+Jenkins is a Continuous Integration system that runs tests and automates some parts of project operations. 
+
+
+Logstash is a high-performance indexing and search engine for logs.
+
+
+Essential blueprints
+Automate running SDN Validation tool from ValCentral and its report visualization
+是一个很好的实例验证脚本
+
+Add horizon support for multi-attached volumes,
+意思是多个虚拟机共享一个磁盘，需要的时候可提出hw的解决方案
+
+ reverse proxy with HTTP Basic Auth问题
+http://code.google.com/p/gerrit/issues/detail?id=1743&can=1&q=proxy&colspec=ID%20Type%20Stars%20Milestone%20Status%20Priority%20Owner%20Summary
+
+
+安装gerrit development_become_any_account认证模式
+http://blog.csdn.net/benkaoya/article/details/8680886
+
+
+git clone https://github.com/pyKun/vimrc/blob/master/git_script.sh
+
+
+git review -s
+
+git mv application.py newApplication.py
+git status
+
+git commit -m "Renamed git_script.sh  to git_init.sh"
+git review -D
+stack.sh中的执行顺序：
+支持OS类型包括Ubuntu 12.04或以上；Fedora F18或以上
+禁止使用root运行
+读取local.conf
+检查stackrc文件是否存在
+检查Devstack是不是已经在运行。如果在运行，则退出
+配置目标安装目录，包括创建目录，设置权限
+配置hostname，logging等
+读取各组件的安装和启动script
+如果没有配置密码，则需要用户输入各密码
+配置数据库
+配置Keystone
+安装各pre-condition包
+安装client包
+安装和配置keystone，swift，glance，cinder，neutron，nova，horizon，ceilometer，heat，CA
+配置数据库
+配置screen
+创建个组件使用的账号
+初始化和启动horizon
+启动swift，glance，
+安装images
+启动swift，nova_api，neutron，nova，cinder，ceilometer，heat
+
+将/opt/stack所有文件拷贝到你的环境中，必要的话将git clone全部注释掉，再运行stack.sh
+
+qemu-img create -f qcow2 ubuntu_server.qcow2 20G
+
+git review 查看指定版本的改动
+
+Rally集成了部署、API测试、压力测试功能,一般用 devstack 部署，tempest 做 API 测试，因此 Rally 常用于模拟高并发场景的压力测试。
+从而测试出  openstack 规模和性能。
+
+https://www.rdoproject.org/Load_Balance_OpenStack_API
+
+
+
+Openstack 加入虚拟机问题
+系统崩溃修复问题
+Openstack DHCP分配IP，删除后不能重用问题
+
+
+
+在试用期的时间里，感谢领导给我宽松的工作环境，让我有时间认识自我的不足，查漏补缺，查找走向一个优秀的openstack 工程师的职业道路
+
+ # uname -a # 查看内核/操作系统/CPU信息
+   # head -n 1 /etc/issue # 查看操作系统版本
+   # cat /proc/cpuinfo # 查看CPU信息
+   # hostname # 查看计算机名
+   # lspci -tv # 列出所有PCI设备
+   # lsusb -tv # 列出所有USB设备
+   # lsmod # 列出加载的内核模块
+   # env # 查看环境变量
+   资源
+   # free -m # 查看内存使用量和交换区使用量
+   # df -h # 查看各分区使用情况
+   # du -sh # 查看指定目录的大小
+   # grep MemTotal /proc/meminfo # 查看内存总量
+   # grep MemFree /proc/meminfo # 查看空闲内存量
+   # uptime # 查看系统运行时间、用户数、负载
+   # cat /proc/loadavg # 查看系统负载
+   磁盘和分区
+   # mount | column -t # 查看挂接的分区状态
+   # fdisk -l # 查看所有分区
+   # swapon -s # 查看所有交换分区
+   # hdparm -i /dev/hda # 查看磁盘参数(仅适用于IDE设备)
+   # dmesg | grep IDE # 查看启动时IDE设备检测状况
+   网络
+   # ifconfig # 查看所有网络接口的属性
+   # iptables -L # 查看防火墙设置
+   # route -n # 查看路由表
+   # netstat -lntp # 查看所有监听端口
+   # netstat -antp # 查看所有已经建立的连接
+   # netstat -s # 查看网络统计信息
+   进程
+   # ps -ef # 查看所有进程
+   # top # 实时显示进程状态
+   用户
+   # w # 查看活动用户
+   # id # 查看指定用户信息
+   # last # 查看用户登录日志
+   # cut -d: -f1 /etc/passwd # 查看系统所有用户
+   # cut -d: -f1 /etc/group # 查看系统所有组
+   # crontab -l # 查看当前用户的计划任务
+   服务
+   # chkconfig --list # 列出所有系统服务
+   # chkconfig --list | grep on # 列出所有启动的系统服务
+   程序
+   # rpm -qa # 查看所有安装的软件包
+
+https://www.rabbitmq.com/tutorials/tutorial-six-python.html
+
+Tempest complexity can make it difficult and time-consuming to use. 
+The solution for these problems is Rally,
+
+TripleO is a program aimed at installing, upgrading and operating OpenStack clouds using OpenStack's own cloud facilities as the foundations 
+Barbican is a REST API designed for the secure storage, provisioning and management of secrets.
+共享式档案系统服务（Shared Filesystem Service）Manila、
+DNS管理服务Designate、
+云端讯息列队服务（Cloud Messaging Queue Service）Zaqar、
+金钥管理服务（Key Management Service）Barbican
+Zaqar is a multi-tenant cloud messaging service for web developers
+
+Rally is a benchmarking tool that answers the question
+The Puppet modules for OpenStack are written as a collaborative effort between OpenStack operators using Puppet.
+
+
+
+
+is判断的是a对象是否就是b对象，是通过id来判断的
+==判断的是a对象的值是否和b对象的值相等，是通过value来判断的
+
+http://forum.xda-developers.com/android/software-hacking/how-to-installation-configuration-t2872595
+
+gerrit安装比较难的地方在于它有多种身份验证方法，身份验证方法决定了如何登录Gerrit。
+
+属于内源社区贡献
+、提交代码次数；
+2、提交总代码量；
+3、提交特性数；
+4、提交Bug。
+scp -r neutron 10.67.148.39:/usr/lib64/python2.6/site-packages
+
+Tempest 由社区人员维护。Tempest 测试框架包含 Openstack 基本组件（nova, keystone, glance, quantum, cinder）的测试用例，同时支持 JSON、XML 两种 REST API 格式类型的测试， 以及 CLI 测试
+http://kiwik.github.io/tags.html
+
+至少熟悉KVM/XEN其中一种Hypervisor架构； 
+2. 熟悉Qemu/Libvirt架构与开发； 
+3. 了解Intel VT-x或AMD-V中的任意一种规范； 
+4. 深入掌握Linux内核中虚拟内存，进程管理等子系统； 
+5. 熟练掌握C/C++，有实际开发经验； 
+6. 有开源社区贡献经验者优先。 
+深入掌握Linux内核中IO、文件系统等子系统； 
+2. 熟悉机械/SSD的接口规范与结构，熟悉ISCSI/FC协议； 
+3. 深入理解分布式系统理论原理，并具有相关实践经验； 
+4. 熟悉Ceph/GlusterFS其中任意一种的架构与实现； 
+ 深入掌握Linux内核Namespace，iptable/ebtable/bridge等模块与网络子系统； 
+2. 熟悉OSI模型和以太网原理，熟悉主流交换机/路由器工作原理与管理方式； 
+3. 熟悉Openflow，以及Vxlan/NvGRE/STT/TRILL/MPLS/BGP/OSPF/ISIS其中任意三种协议； 
+4. 熟练掌握C/C++/Python其中之一，有实际开发经验；
+重新各项服务；
+      开启各服务命令：
+      1）keystone
+      keystone-all --config-file=/etc/keystone/keystone.conf &（&的意思是keystone在后台运行，可不加）
+      2）glance
+      glance-api --config-file=/etc/glance/glance-api.conf &
+      glance-registry --config-file=/etc/glance/glance-registry.conf &
+      3）cinder
+      cinder-all --config-file=/etc/cinder/cinder.conf &
+      4）nova
+      nova-api-os-compute --config-file=/etc/nova/nova.conf &
+      nova-api-metadata --config-file=/etc/nova/nova.conf &
+      nova-compute --config-file=/etc/nova/nova.conf &
+      nova-cert --config-file=/etc/nova/nova.conf &
+      nova-scheduler --config-file=/etc/nova/nova.conf &
+      nova-volume --config-file=/etc/nova/nova.conf &
+      nova-network --config-file=/etc/nova/nova.conf &
+      nova-consoleauth --config-file=/etc/nova/nova.conf &
+      nova-novncproxy --config-file=/etc/nova/nova.conf &
+      #nova-xvpvncproxy --config-file=/etc/nova/nova.conf & 
+      #nova-consoleauth --config-file=/etc/nova/nova.conf &
+      nova-objectstore --config-file=/etc/nova/nova.conf &
+      -----或者直接nova-all --config-file=/etc/nova/nova.conf &
+      导入环境变量：导入环境变量主要是通过keystone认证的需要
+      export OS_SERVICE_TOKEN=123456
+      export OS_USERNAME=admin
+      export OS_PASSWORD=123456
+      export OS_TENANT_NAME=admin
+      export OS_AUTH_URL=http://localhost:5000/v2.0/
+      export OS_SERVICE_ENDPOINT=http://localhost:35357/v2.0/
+exec与system的区别
+　　(1) exec是直接用新的进程去代替原来的程序运行，运行完毕之后不回到原先的程序中去。
+　　(2) system是调用shell执行你的命令，system=fork+exec+waitpid,执行完毕之后，回到原先的程序中去。继续执行下面的
+部分。
+
+DHCP Agent
+ 通过Namespace 提供租户间DHCP服务隔离
+ 现有实现基于Dnsmasq后端
+ 配置型Agent
+ 支持调度： Random/负载均衡
+ 支持HA
+L3 Agent
+ 运行在Network Node
+ 使用Linux Namespace
+• 隔离的、独立IP协议栈拷贝
+• 在namesapce内运行相应进程
+• 支持租户间IP地址重叠
+• 静态路由
+ 支持HA
+ L2 Agent
+• 每个Hypervisor上都需要部署
+• 通过RPC消息与Neutron-Server端通信
+• 监控VM网卡的添加、删除，并发布通知
+• 监控到的新增VIF， 则实施网络配置
+
+root/8GM3pBhr 
+
+
+http://lngxiankong.github.io/blog/2014/05/10/vmware-workstation-devstack/
+
+vlan id个数为4094个，也就是最多4094个子网租户，不适用于公有云。
+
+neutron net-create external_net1 --router:external=True
+neutron subnet-create external_net1 200.200.0.0/16 --name=external_subnet1 --allocation-pool start=200.200.200.100,end=200.200.200.120 --gateway_ip 200.200.1.1 --enable_dhcp=False
+neutron net-create demo_net1
+neutron subnet-create demo_net1 10.1.1.0/24 --name=demo_subnet1 --gateway_ip 10.1.1.1
+neutron router-create demo_router1
+neutron router-interface-add 2e9945aa-f636-468e-8d76-8386e3dfabd0(demo_router1) a03be99b-b78f-46d0-9311-e45fd8bcf92d(demo_net1)
+neutron router-gateway-set 2e9945aa-f636-468e-8d76-8386e3dfabd0(demo_router1) ded0dd2b-440a-4e9c-ba38-6df184747741(external_net1)
+
+Open vSwitch中的网桥对应物理交换机，其功能是根据一定流规则，把从端口收到的数据包转发到另一个或多个端口。
+Open vSwitch中，每个端口都属于一个特定的网桥
+端口有以下几种
+Normal Port: 用户可以把操作系统中的网卡绑定到Open vSwitch上，Open vSwitch会生成一个普通端口处理这块网卡进出的数据包。
+
+Internal Port: 设置端口类型为internal，Open vSwitch会创建一快虚拟网卡，此端口收到的所有数据包都会交给这块网卡，网卡发出的包会通过这个端口交给Open vSwitch。
+Patch Port: 当机器中有多个Open vSwitch网桥时，可以使用Patch Port把两个网桥连起来。Patch Port总是成对出现，分别连接在两个网桥上，在两个网桥之间交换数据。
+Tunnel Port: 隧道端口是一种虚拟端口，支持使用gre或vxlan等隧道技术与位于网络上其他位置的远程端口通讯。
+Interface （iface/接口）
+接口是Open vSwitch与外部交换数据包的组件。一个接口就是操作系统的一块网卡,网卡可能是Open vSwitch生成的虚拟网卡，也可能是物理网卡挂载在Open vSwitch上，也可能是操作系统的虚拟网卡（TUN/TAP）挂载在Open vSwitch上。
+Flow （流）
+流定义了端口之间数据包的交换规则。
+Datapath
+由于流可能非常复杂，对每个进来的数据包都去尝试匹配所有流，效率会非常低，
+Datapath是流的一个缓存，会把流的执行结果保存起来，当下次遇到匹配到同一条流的数据包，直接通过datapath处理。datapath完全是在内核态实现的，并且默认的超时时间非常短
+
+#vim /etc/enviroment  
+export http_proxy=http://proxy.com:port  
+export https_proxy=http://proxy.com:port  
+export no_proxy=127.0.0.1,localhost 
+export http_proxy=http://h00327910:huang333#@proxyhk.huawei.com:8080/
+export https_proxy=https://h00327910:huang333#@proxyhk.huawei.com:8080/
+export ftp_proxy=http://username:password@proxyhk.huawei.com:8080/
+
+
+使用 DevStack 脚本安装 OpenStack 的话，日志会显示在 screen 会话里
+用 MultiTail 查看多个 OpenStack 日志
+apt-get install multitail
+
+OpenStack 运行日志写到 /opt/stack/logs/screen 下：
+vi devstack/localrc
+...
+DEST=/opt/stack
+SCREEN_LOGDIR=$DEST/logs/screen
+multitail -s 2 /opt/stack/logs/screen/screen-n-sch.log \
+/opt/stack/logs/screen/screen-n-cpu.log \
+/opt/stack/logs/screen/screen-n-net.log
+
+http://www.vpsee.com/2012/09/use-multitail-to-track-openstack-logs/
+MultiTail 查看多个 OpenStack 日志
+
+
+Import the debugger	import pdb
+Set the breakpoint	pdb.set_trace()
+
+内置set命令选项
+选项名   	快捷开关	含义 
+allexport 	-a 	从这个选项中被设置开始就自动标明要输出的新变量或修改过的变量，直至选项被复位 
+braceexpand 	-B	打开花括号扩展，它是一个默认设置 
+emacs 	 		使用emacs内置编辑器进行命令行编辑，是一个默认设置 
+errexit		-e 	当命令返回一个非零退出状态（失败）时退出。读取初始化文件时不设置 
+histexpand 	-H 	执行历史替换时打开!和!!扩展，是一个默认设置 
+history 	 	打开命令行历史、默认为打开 
+ignoreeof	 	禁止用EOF(Ctrl+D)键退出shell。必须键入exit才能退出。等价于设置shell变量IGNOREEOF=10 
+keyword 	-k  	将关键字参数放到命令的环境中
+monitor		-m 	设置作业控制 
+noclobber	-C 	防止文件在重定向时被重写 
+noexec		-n 	读命令，但不执行。用来检查脚本的语法。交互式运行时不开启 
+noglob 		-d 	禁止用路径名扩展。即关闭通配符 
+notify		-b 	后台作业完成时通知用户 
+nounset		-u  	扩展一个未设置的变量时显示一个错误信息 
+onecmd		-t 	在读取和执行命令后退出 
+physical	-P  	设置时，在键入cd或pwd禁止符号链接。用物理目录代替 
+privileged	-p 	设置后，shell不读取.profile或ENV文件，且不从环境继承shell函数，将自动为setuid脚本开启特权 
+verbose 	-v 	为调试打开verbose模式
+xtrace	-x 	为调试打开echo模式 
+
+local一般用于局部变量声明，多在在函数内部使用
+export:将自定义变量设定为系统环境变量（仅限于该次登陆操作，当前shell中有效）
+
+rebase的过程中，也许会出现冲突(conflict). 在这种情况，Git会停止rebase并会让你去解决 冲突
+如果你想让"mywork"分支历史看起来像没有经过任何合并一样，你也许可以用 git rebase:
+
+
+rebase不会产生多余的commit，
+git merge 会生成一个新得合并节点
+    D---E test
+     /
+A---B---C---F master
+使用merge合并，如图
+
+      D--------E
+     /          \
+A---B---C---F----G   test, master
+
+使用rebase则：
+
+A---B---D---E---C'---F'   test, master
+
+产品OEM保留分支时适用rebase,功能分支合并到主分支用merge
+
+
+team单独成员开辟个人工作区域，单元测试无误之后再把成员的工作代码合并到主分支中
+
+修改某个公用代码的BUG,用rebase 
+多人协作长时间开发功能模块，用merge
+
+
+向社区提交一个commit，用
+git merge
+
+向社区同时提交了两个有依赖的提交，
+前一个提交要修改
+git rebase id  --interactive
+git commit --amend
+git rebase --continue
+之后直接git review
+
+
+Repositories contributed ,
+
+git checkout mywork
+$ git rebase origin
+
+
+Multiple external networks with a single L3 agent
+http://blog.oddbit.com/2014/05/28/multiple-external-networks-wit/
+
+OpenStack Cloud Images
+http://thornelabs.net/2014/06/01/where-to-find-openstack-cloud-images.html
+
+Booting an instance with multiple fixed addresses
+http://blog.oddbit.com/2014/05/28/booting-an-instance-with-multi/
+
+
+开放源码是一种开发软件的方法论；自由软件则是社会运动。
+
+it will consume a long time when there is something wrong with the module to create VM after the task of creating a new instance,sometime the error statue will be givn after a long time of waiting for success.
+when the problom is solved,the task of same work must begin again.I think it will be convenient to begin from the error status then many same work will not be done again.
+
+
+DOVE (distributed overlay virtual Ethernet) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
